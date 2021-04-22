@@ -16,6 +16,8 @@ public class Orden {
     @Column(name = "id_orden")
     private Long idOrden;
 
+    @ManyToOne
+    @JoinColumn(name ="id_usuario",insertable = false,updatable = false)
     private Usuario usuario;
 
     private List<DetallesOrden> detallesOrdenes;

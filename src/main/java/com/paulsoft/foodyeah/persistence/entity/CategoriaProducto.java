@@ -1,6 +1,7 @@
 package com.paulsoft.foodyeah.persistence.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias_productos")
@@ -10,7 +11,7 @@ public class CategoriaProducto {
     @Column(name="id_cateogoria_producto")
     private Long idCategoriaProducto;
 
-
+    @OneToMany(mappedBy = "categoriaProducto")
     private List<Producto> productos;
 
     @Column(name = "nombre_categoria")

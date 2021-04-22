@@ -20,8 +20,10 @@ public class Usuario {
 
     private Boolean estado;
 
+    @OneToMany(mappedBy = "id_tarjeta")
     private List<Tarjeta> tarjetas;
 
+    @OneToMany(mappedBy = "id_orden")
     private List<Orden> ordenes;
 
     public Long getIdUsuario() {

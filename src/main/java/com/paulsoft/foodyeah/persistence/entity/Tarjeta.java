@@ -1,5 +1,7 @@
 package com.paulsoft.foodyeah.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
+
 import javax.persistence.*;
 
 @Entity
@@ -13,6 +15,8 @@ public class Tarjeta {
     @Column(name="id_usuario")
     private Long idUsuario;
 
+    @ManyToOne
+    @JoinColumn(name = "id_usuario",updatable = false,insertable = false)
     private Usuario usuario;
 
     @Column(name = "tipo_tarjeta")

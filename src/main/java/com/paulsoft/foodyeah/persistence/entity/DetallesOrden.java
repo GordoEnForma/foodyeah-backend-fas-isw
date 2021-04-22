@@ -15,11 +15,15 @@ public class DetallesOrden {
     @Column(name = "id_orden")
     private Long idOrden;
 
+    @ManyToOne
+    @JoinColumn(name="id_orden",insertable = false,updatable = false)
     private Orden orden;
 
     @Column(name = "id_producto")
     private Long idProducto;
 
+    @ManyToOne
+    @JoinColumn(name="id_producto",insertable = false,updatable = false)
     private Producto producto;
 
     private Byte cantidad;

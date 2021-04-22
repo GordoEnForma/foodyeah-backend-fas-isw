@@ -1,7 +1,7 @@
 package com.paulsoft.foodyeah.persistence.entity;
 
 import javax.persistence.*;
-import java.util.List
+import java.util.List;
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -10,9 +10,12 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProducto;
 
+    @ManyToOne
+    @JoinColumn(name = "id_categoria",insertable = false,updatable = false)
     @Column(name ="categoria_producto")
     private CategoriaProducto categoriaProducto;
 
+    @OneToMany(mappedBy = "producto")
     private List<DetallesOrden> detallesOrdenes;
 
     @Column(name = "nombre_producto")
